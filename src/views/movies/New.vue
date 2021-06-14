@@ -14,6 +14,8 @@
     Plot:
     <input type="text" v-model="newPlot" />
     <br />
+    <small class="text-danger">{{ 500 - newPlot.length }} characters left.</small>
+    <br />
     English:
     <input type="text" v-model="newEnglish" />
     <br />
@@ -21,7 +23,11 @@
   </div>
 </template>
 
-<style></style>
+<style>
+.text-danger {
+  color: red;
+}
+</style>
 
 <script>
 import axios from "axios";
