@@ -2,22 +2,38 @@
   <div class="home">
     <h1>Rad Movies</h1>
     <h2>Know a rad movie? Add it!</h2>
-    Title:
-    <input type="text" v-model="newTitle" />
-    <br />
-    Director:
-    <input type="text" v-model="newDirector" />
-    <br />
-    Year:
-    <input type="text" v-model="newYear" />
-    <br />
-    Plot:
-    <input type="text" v-model="newPlot" />
-    <br />
-    English:
-    <input type="text" v-model="newEnglish" />
-    <br />
-    <button v-on:click="createMovie">Add Movie</button>
+    <form>
+      <label for="title">Title:</label>
+      <br />
+      <input type="text" id="title" v-model="newTitle" />
+      <br />
+      Director:
+      <input type="text" v-model="newDirector" />
+      <br />
+      Year:
+      <input type="text" v-model="newYear" />
+      <br />
+      Plot:
+      <textarea name="plot" id="plot" cols="30" rows="10" v-model="newPlot" placeholder="Plot Description"></textarea>
+      <br />
+      English:
+      <input type="checkbox" v-model="newEnglish" />
+      <br />
+      <button v-on:click="createMovie">Add Movie</button>
+    </form>
+    <p>Movie Rating:</p>
+
+    <form>
+      <input type="radio" id="thumbsUP" name="rating" value="thumbsUP" />
+      <label for="thumbsUp">Thumbs Up</label>
+      <br />
+      <input type="radio" id="tumbsMiddle" name="rating" value="thumbsMiddle" />
+      <label for="thumbsMiddle">Thumbs Middle</label>
+      <br />
+      <input type="radio" id="thumbsDown" name="rating" value="thumbsDown" />
+      <label for="thumbsDown">Thumbs Down</label>
+    </form>
+
     <div v-for="movie in movies" v-bind:key="movie.id">
       <h3>{{ movie.title }}</h3>
       <br />
