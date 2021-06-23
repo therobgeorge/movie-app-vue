@@ -12,6 +12,10 @@
         <input type="text" class="form-control" v-model="editMovieParams.title" />
       </div>
       <div class="form-group">
+        <label>Image:</label>
+        <input type="text" class="form-control" v-model="editMovieParams.image_url" />
+      </div>
+      <div class="form-group">
         <label>Director:</label>
         <input type="text" class="form-control" v-model="editMovieParams.director" />
       </div>
